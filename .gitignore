@@ -1,0 +1,8 @@
+*__pycache__
+*.ply
+*.bin
+.vscode
+weights/
+runs/
+Experiments/*/*/*/
+test_commands.txt

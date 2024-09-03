@@ -1,0 +1,43 @@
+# Copyright (c) 2010-2024, InterDigital
+# All rights reserved. 
+# See LICENSE under the root folder.
+
+WEIGHTS_PATH:  "/home/nf-pcac/weights"
+
+model_configs:
+
+  - id: "NF_PCAC"
+    arch_type: "NF"
+    # Archi configs
+    N_levels: [3,3,3,3,3,3,3]
+    num_filters_M: [128,128,128,128,128,128,128]
+    enh_channels: [64,64,64,64,64,64,64]
+    attention_channels: [128,128,128,128,128,128,128]
+    num_scales: [64,64,64,64,64,64,64]
+    scale_max: [256.,256.,256.,256.,256.,256.,256.]
+    scale_min: [.11,.11,.11,.11,.11,.11,.11]
+    squeeze_type: ["avg","avg","avg","avg","avg","avg","avg"]
+
+    lambda: [16000, 8000, 4000, 2000, 1000, 400, 100]
+    color_space: ["YUV","YUV","YUV","YUV","YUV","YUV","YUV"]
+    
+    # train configurations
+    train_dataset: [
+                    "path_to_train_dataset1/",
+                    "path_to_train_dataset2/",
+                    ]
+    validation_dataset: [
+                         "path_to_validation_dataset1/",
+                         "path_to_validation_dataset1/",
+                         ]
+    # Start training from previous calculated to speed up training
+    load_weights: ["None",
+                   "/home/nf-pcac/weights/NF_PCAC/1.60e+04/last_ckp.pth.tar",
+                   "/home/nf-pcac/weights/NF_PCAC/8.00e+03/last_ckp.pth.tar",
+                   "/home/nf-pcac/weights/NF_PCAC/4.00e+03/last_ckp.pth.tar",
+                   "/home/nf-pcac/weights/NF_PCAC/2.00e+03/last_ckp.pth.tar",
+                   "/home/nf-pcac/weights/NF_PCAC/1.00e+03/last_ckp.pth.tar",
+                   "/home/nf-pcac/weights/NF_PCAC/4.00e+02/last_ckp.pth.tar"]
+    batch_size: 8
+    learning_rate: 1.0e-4
+    epochs: [30,10,10,10,10,10,10]

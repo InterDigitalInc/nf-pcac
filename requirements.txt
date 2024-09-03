@@ -1,0 +1,9 @@
+compressai==1.2.4
+MinkowskiEngine==0.5.4
+numpy==1.26.4
+pandas==2.2.1
+plyfile==1.0.3
+PyYAML==6.0.1
+torch==2.1.1
+torchvision==0.16.1
+tqdm==4.65.0

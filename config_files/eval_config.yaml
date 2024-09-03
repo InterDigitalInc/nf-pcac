@@ -1,0 +1,153 @@
+# Copyright (c) 2010-2024, InterDigital
+# All rights reserved. 
+# See LICENSE under the root folder.
+
+MODEL_PATH:  "/home/nf-pcac/weights/"
+MPEG_TMC13_DIR: "/home/mpeg-pcc-tmc13"
+PCERROR: "/home/mpeg-pcc-dmetric/source/build/pc_error"
+MPEG_DATASET_DIR: "/home/path_to_test_models_folder/"
+EXPERIMENT_DIR: "/home/nf-pcac/Experiments/"
+
+pcerror_mpeg_mode: "octree-raht/lossless-geom-lossy-attrs"
+
+model_configs:
+
+  - id: "NF_PCAC"
+    arch_type: "NF"
+    N_levels: [3,3,3,3,3,3,3,3,3]
+    num_filters_M: [128,128,128,128,128,128,128]
+    enh_channels: [64,64,64,64,64,64,64]
+    attention_channels: [128,128,128,128,128,128,128]
+    num_scales: [64,64,64,64,64,64,64]
+    scale_max: [256.,256.,256.,256.,256.,256.,256.]
+    scale_min: [.11,.11,.11,.11,.11,.11,.11]
+
+    lambda: [16000, 8000, 4000, 2000, 1000, 400, 100]
+    color_space: ["YUV","YUV","YUV","YUV","YUV","YUV","YUV","YUV","YUV"]
+    squeeze_type: ["avg","avg","avg","avg","avg","avg","avg","avg","avg"]
+
+data:
+# #############################################
+# ############### CAT 1 - A ###################
+# #############################################
+#   - pc_name: boxer_viewdep_vox12
+#     cfg_name: boxer_viewdep_vox12
+#     input_pc: boxer_viewdep_vox12.ply
+#     input_norm:
+#     pc_resolution: 12
+
+  # - pc_name: dancer_vox11_00000001
+  #   cfg_name: dancer_vox11_00000001
+  #   input_pc: dancer_vox11_00000001.ply
+  #   input_norm: 
+  #   pc_resolution: 11
+
+#   - pc_name: egyptian_mask_vox12
+#     cfg_name: egyptian_mask_vox12
+#     input_pc: Egyptian_mask_vox12.ply
+#     input_norm:
+#     pc_resolution: 12
+
+#   - pc_name: facade_00009_vox12
+#     cfg_name: facade_00009_vox12
+#     input_pc: Facade_00009_vox12.ply
+#     input_norm:
+#     pc_resolution: 12
+
+  # - pc_name: facade_00064_vox11
+  #   cfg_name: facade_00064_vox11
+  #   input_pc: Cat1_quantized/Facade_00064_vox11.ply
+  #   input_norm:
+  #   pc_resolution: 11
+
+#   - pc_name: house_without_roof_00057_vox12
+#     cfg_name: house_without_roof_00057_vox12
+#     input_pc: House_without_roof_00057_vox12.ply
+#     input_norm:
+#     pc_resolution: 12
+
+#   - pc_name: queen_0200
+#     cfg_name: queen_0200
+#     input_pc: queen_0200.ply
+#     input_norm: queen_0200_n.ply
+#     pc_resolution: 10
+
+#   - pc_name: shiva_00035_vox12
+#     cfg_name: Shiva_00035_vox12
+#     input_pc: Shiva_00035_vox12.ply
+#     input_norm: 
+#     pc_resolution: 12
+
+#   - pc_name: soldier_viewdep_vox12
+#     cfg_name: soldier_viewdep_vox12
+#     input_pc: soldier_viewdep_vox12.ply
+#     input_norm: 
+#     pc_resolution: 12
+
+  # - pc_name: soldier_vox10_0690
+  #   cfg_name: soldier_vox10_0690
+  #   input_pc: soldier_vox10_0690.ply
+  #   input_norm: soldier_vox10_0690_n.ply
+  #   pc_resolution: 10
+
+#   - pc_name: thaidancer_viewdep_vox12
+#     cfg_name: thaidancer_viewdep_vox12
+#     input_pc: Thaidancer_viewdep_vox12.ply
+#     input_norm:
+#     pc_resolution: 12
+
+#   - pc_name: ulb_unicorn_vox13
+#     cfg_name: ulb_unicorn_vox13
+#     input_pc: ULB_Unicorn_vox13_n.ply
+#     input_norm:
+#     pc_resolution: 13
+
+# # ############################################
+# # ############## CAT 1 - B ###################
+# # ############################################
+
+#   - pc_name: arco_valentino_dense_vox12
+#     cfg_name: arco_valentino_dense_vox12
+#     input_pc: Arco_Valentino_Dense_vox12.ply
+#     input_norm: 
+#     pc_resolution: 12
+
+#   - pc_name: frog_00067_vox12
+#     cfg_name: frog_00067_vox12
+#     input_pc: Frog_00067_vox12.ply
+#     input_norm: 
+#     pc_resolution: 12
+
+# # ############################################
+# # ############ CAT 1 - Extra #################
+# # ############################################
+
+  # - pc_name: basketball_player_vox11_00000200
+  #   cfg_name: basketball_player_vox11_00000200
+  #   input_pc: basketball_player_vox11_00000200.ply
+  #   input_norm:
+  #   pc_resolution: 11
+
+  # - pc_name: longdress_vox10_1300
+  #   cfg_name: longdress_vox10_1300
+  #   input_pc: longdress_vox10_1300.ply
+  #   input_norm: longdress_vox10_1300_n.ply
+  #   pc_resolution: 10
+
+  # - pc_name: loot_vox10_1200
+  #   cfg_name: loot_vox10_1200
+  #   input_pc: loot_vox10_1200.ply
+  #   input_norm: loot_vox10_1200_n.ply
+  #   pc_resolution: 10
+
+  # - pc_name: redandblack_vox10_1550
+  #   cfg_name: redandblack_vox10_1550
+  #   input_pc: redandblack_vox10_1550.ply
+  #   input_norm: redandblack_vox10_1550_n.ply
+  #   pc_resolution: 10
+
+  # - pc_name: thomas_10bits_0097
+  #   cfg_name: thomas_10bits_0097
+  #   input_pc: thomas_10bits_0097.ply
+  #   input_norm: 
+  #   pc_resolution: 10
