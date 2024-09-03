@@ -10,7 +10,7 @@
 This repository contains the implementation of [NF-PCAC](https://ieeexplore.ieee.org/document/10096294), the first end-to-end learning-based approach that makes use of a normalizing flow architecture to encode point cloud attributes. Normalizing flows are neural networks that model invertible transforms. In contrast to variational
 autoencoders (VAE), these architectures do not have a low dimensional bottleneck and can achieve good reconstructions. We adapt the 2D normalizing flow architecture to take into consideration the 3D nature and the sparsity of point clouds and we add some approximations to obtain a better trade off between quality and bitrate. Experimentation shows state-of-the-art performance, while providing higher coding gains than existing learning based attribute compression approaches. It is also the first learning based approach that achieves comparable and in some cases, even better results than [G-PCC codec](https://github.com/MPEGGroup/mpeg-pcc-tmc13) for attributes.
 
-<img src="imgs/nf-pcac.png" alt="drawing" width="800"/>
+<img src="imgs/nf-pcac.jpg" alt="drawing" width="800"/>
 <!-- ![img](imgs/normalizing_flow.png) -->
 
 
